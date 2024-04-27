@@ -1,0 +1,41 @@
+
+SET IDENTITY_INSERT [dbo].[TaskStatus] ON
+INSERT INTO [dbo].[TaskStatus] ([Id], [Name]) VALUES (1, N'Завершена')
+INSERT INTO [dbo].[TaskStatus] ([Id], [Name]) VALUES (2, N'В процессе')
+INSERT INTO [dbo].[TaskStatus] ([Id], [Name]) VALUES (3, N'Свобобна')
+SET IDENTITY_INSERT [dbo].[TaskStatus] OFF
+
+SET IDENTITY_INSERT [dbo].[Departaments] ON
+INSERT INTO [dbo].[Departaments] ([Id], [Name]) VALUES (1, N'Главный')
+INSERT INTO [dbo].[Departaments] ([Id], [Name]) VALUES (2, N'Второстепенный')
+SET IDENTITY_INSERT [dbo].[Departaments] OFF
+
+SET IDENTITY_INSERT [dbo].[Warehouses] ON
+INSERT INTO [dbo].[Warehouses] ([Id], [Name]) VALUES (1, N'Гланый')
+INSERT INTO [dbo].[Warehouses] ([Id], [Name]) VALUES (2, N'Северный')
+SET IDENTITY_INSERT [dbo].[Warehouses] OFF
+
+SET IDENTITY_INSERT [dbo].[UserStatus] ON
+INSERT INTO [dbo].[UserStatus] ([Id], [Name]) VALUES (1, N'Свободен')
+INSERT INTO [dbo].[UserStatus] ([Id], [Name]) VALUES (2, N'Занят')
+SET IDENTITY_INSERT [dbo].[UserStatus] OFF
+
+SET IDENTITY_INSERT [dbo].[TasksTypes] ON
+INSERT INTO [dbo].[TasksTypes] ([Id], [Name]) VALUES (1, N'Разгрузка')
+INSERT INTO [dbo].[TasksTypes] ([Id], [Name]) VALUES (2, N'Погрузка')
+SET IDENTITY_INSERT [dbo].[TasksTypes] OFF
+
+SET IDENTITY_INSERT [dbo].[UserPositions] ON
+INSERT INTO [dbo].[UserPositions] ([Id], [Name]) VALUES (1, N'Глава Склалад')
+INSERT INTO [dbo].[UserPositions] ([Id], [Name]) VALUES (2, N'Сотрудник')
+SET IDENTITY_INSERT [dbo].[UserPositions] OFF
+
+SET IDENTITY_INSERT [dbo].[Users] ON
+INSERT INTO [dbo].[Users] ([Id], [Name], [SecondName], [Departament_Id], [Position_Id], [Status_Id], [Warehouse_Id], [Password]) VALUES (1, N'Тест', N'Тестовый', 1, 1, 1, 1, 1234)
+INSERT INTO [dbo].[Users] ([Id], [Name], [SecondName], [Departament_Id], [Position_Id], [Status_Id], [Warehouse_Id], [Password]) VALUES (2, N'Тест2', N'Тестовы2', 2, 2, 2, 2, 4321)
+SET IDENTITY_INSERT [dbo].[Users] OFF
+
+SET IDENTITY_INSERT [dbo].[Tasks] ON
+INSERT INTO [dbo].[Tasks] ([id], [title], [Description], [Priority], [StartDate], [EndDate], [AssignedUser_Id], [Status_Id], [TaskInitiator_Id], [Type_Id]) VALUES (1, N'Тест', N'Пусто', 1, N'1900-01-01 00:00:00', N'1900-01-01 00:00:00', 1, 1, 1, 1)
+INSERT INTO [dbo].[Tasks] ([id], [title], [Description], [Priority], [StartDate], [EndDate], [AssignedUser_Id], [Status_Id], [TaskInitiator_Id], [Type_Id]) VALUES (2, N'Тест2', N'Не Пусто', 1, N'1900-01-01 00:00:00', N'1900-01-01 00:00:00', 2, 2, 2, 2)
+SET IDENTITY_INSERT [dbo].[Tasks] OFF
